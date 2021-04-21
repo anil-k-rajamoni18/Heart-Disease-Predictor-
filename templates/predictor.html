@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="registration-form">
-        <form>
+        <form action="{{url_for('predict')}}">
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
@@ -46,17 +46,7 @@
 
         </div>
 
-        <!--     <div class="col-auto my-1">
-        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        </select>
-        </div>
 
-         -->
 
 
             <div class="form-group">
@@ -181,6 +171,6 @@
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="../static/js/custom.js"></script>
 
-    
+
 </body>
 </html>

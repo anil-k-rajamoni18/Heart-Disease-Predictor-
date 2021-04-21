@@ -11,8 +11,25 @@ model = joblib.load(filename)
 app = Flask(__name__)
 
 
-def home():
+def home(/):
 	return render_template('index.html')
+
+
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    temp_array = list()
+
+    if request.methods =="POST":
+    	name = str(request.form["name"])
+    	
+    	sex = int(request.form["Gender"])
+    	
+    	age  = int(request.form["age"])
+
+    	
+
 
 
 
