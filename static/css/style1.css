@@ -589,24 +589,24 @@ li a.active {
 /*footer*/
 
 .footer-para {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 .footer p {
-    font-size: 12px;
-    color: #000;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    margin: 0;
-    padding: 25px 0;
+    font-size: 12px !important;
+    color: #000 !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 300 !important;
+    margin: 0 !important;
+    padding: 25px 0 !important;
 }
 .footer a i.fa {
-    font-size: 24px;
-    color: #b1b1b1;
-    padding: 22px 10px;
+    font-size: 24px !important;
+    color: #b1b1b1 !important;
+    padding: 22px 10px !important;
 }
 .footer a i.fa:hover {
-    color: #42b3e5;
+    color: #42b3e5 !important;
 }
 .carousel-inner {
     position: relative;
