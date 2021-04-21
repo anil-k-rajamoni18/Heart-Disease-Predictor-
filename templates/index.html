@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href=" ../static/css/style.css">
+
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"> </script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="registration-form">
+        <form>
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control item" id="age" placeholder="Age">
+            </div>
+
+
+        
+        
+
+           <div class="form-control item">
+            <label for="exampleInputPassword1">Gender </label><br>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="Gender" id="inlineRadio1" value="1">
+          <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="Gender" id="inlineRadio2" value="0">
+          <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+
+
+        </div>
+
+        <!--     <div class="col-auto my-1">
+        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        </select>
+        </div>
+
+         -->
+
+
+            <div class="form-group">
+                <input type="text" class="form-control item" id="rbp"  name = "resting_blood_pressure" placeholder="Resting Blood Pressure eg. 120 , 145 ,102">
+            </div>
+
+               <div class="form-group">
+                <input type="text" class="form-control item" id="chol"  name ="cholestrol" placeholder="Cholesterol eg. 233 , 130 ,190">
+            </div>
+
+                <div class="form-group">
+                <input type="text" class="form-control item" id="heart_rate"  name ="max_heart_rate" placeholder="Max Heart Rate Achieved eg. 123 , 175 ,100">
+            </div>
+
+
+
+
+
+      <select id="select1" class=" form-control item" name="fasting_blood_sugar">
+            <option value="none" class="form-control item"> Fasting Blood Sugar > 120 mg/dl </option>
+          <option value="1" > True </option>
+            <option value="0"> False </option>
+        </select><br>
+
+
+
+ <select id="select1" class=" form-control item" name="rest_ecg_type">
+            <option value="none"> Rest ECG Type </option>
+          <option value="0" class="align-center"> Left Ventricular Hypertrophy </option>
+            <option value="1" class="align-center">Normal </option>
+
+             <option value="2" class="align-center"> ST-T wave abnormality</option>
+
+        </select><br>
+
+
+
+
+<!-- exercise_induced_angina -->
+
+ <select id="select1" class=" form-control item" name="exang">
+            <option value="none"> Exercise Induced Angina  </option>
+          <option value="1" class="align-center"> Yes </option>
+            <option value="0" class="align-center">No </option>
+
+        </select><br>
+
+
+        
+        <div class="form-group">
+                <input type="text" class="form-control item" id="rbp"  name = "st_depression" placeholder="Old Peak | ST Depression eg. 120 , 145 ,102">
+            </div>
+
+
+<!-- st_slope_type -->
+
+    <select id="select1" class=" form-control item" name="st_slope">
+            <option value="none"> ST_Slope </option>
+          <option value="0" > DownSloping </option>
+            <option value="1" >Flat</option>
+            <option value="2" > UpSloping</option>
+
+        </select><br>
+
+
+
+         <!-- num_major_vessels -->
+
+         <div class="form-group">
+                <input type="text" class="form-control item" id="rbp"  name = "no_vessels" placeholder="Number of Vessels (0-3)">
+            </div>
+
+
+
+
+<!-- thalassemia_type -->
+
+
+    <select id="select1" class=" form-control item" name="thalassemia">
+            <option value="none"> Thalassemia Type </option>
+          <option value="0" > Nothing</option>
+            <option value="1" >Fixed defect</option>
+            <option value="2" > UpSloping</option>
+            <option value="3" >Reversable Defect</option>
+
+        </select><br>
+
+
+
+        <!-- chest_pain_type -->
+
+
+   <select id="select1" class=" form-control item" name="chest_pain">
+            <option value="none"> Chest Pain Type </option>
+          <option value="0" > asymptomatic</option>
+            <option value="1" >atypical angina</option>
+            <option value="2" >non-anginal pain</option>
+            <option value="3" >typical angina</option>
+
+        </select><br>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-block create-account myButton">Predict Score</button>
+            </div>
+        </form>
+
+
+
+
+       
+
+     
+
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
