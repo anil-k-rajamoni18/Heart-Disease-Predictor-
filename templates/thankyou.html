@@ -14,7 +14,10 @@
 
   <!-- <link rel="stylesheet" href="../static/css/style.css">  -->
   <script src="js/modernizr.js"></script>
-
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 <body>
@@ -98,8 +101,6 @@
 
 
 
-
-
 <br>
 
 
@@ -116,77 +117,21 @@
 
 <br>
 <br>
+
+
+<br>
+<br>
+
 <div class="section-container">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
           
-          
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-               <form action="{{url_for('submit_form')}}" method="POST" class="reveal-content">
-                  <div class="row">
-                    <div class="col-md-7">
-                      <div class="form-group">
-                        <input name="username" type="text" class="form-control" id="name" placeholder="Name">
-                      </div>
-                      <div class="form-group">
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Email">
-                      </div>
-                      <div class="form-group">
-                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
-                      </div>
-                      <div class="form-group">
-                        <textarea name="message"class="form-control" rows="3" style="width: 100%; max-width: 100%;" placeholder="Enter your message"></textarea>
-                      </div>
 
-
-                      <div>
-
-                      <button type="submit" class="btn btn-default btn-lg">Send</button>
-                    </div>
-
-
-                    
-                    <div class="col-md-5 address-container">
-                      <ul class="list-unstyled">
-                        <li>
-                          <span class="fa-icon">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                          </span>
-                        <a href="tel:998386323">+91 9948386323 </a>  
-                        </li>
-                        <li>
-                          <span class="fa-icon">
-                            <i class="fa fa-at" aria-hidden="true"></i>
-                          </span>
-                          
-                          <a href=mailto:anil.k.rajamoni99@gmail.com?subject="HTML link">anil.k.rajamoni99@gmail.com</a>
-                        </li>
-                        <li>
-                          <span class="fa-icon">
-                            <i class="fa fa fa-map-marker" aria-hidden="true"></i>
-                          </span>
-                         79  Hyderabad , Telangana
-                        </li>
-                      </ul>
-                      <h3>Follow us on social networks</h3>
-                      <a href="https://www.linkedin.com/in/anil-k-rajamoni-0ba063183/"  title="" class="fa-icon">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                     
-                      <a href="https://github.com/anil-k-rajamoni18" title="" class="fa-icon">
-                        <i class="fa fa-github"></i>
-                      </a>
-                      <a href="https://www.instagram.com/anilkrajamoni96/" title="" class="fa-icon">
-                        <i class="fa fa-instagram"></i>
-                      </a>
-                     
-                     
-
-                    </div>
-                  </div>
-                </form>
+                <center><h2>Hey {{name}},Thank you ! We will get in touch with you, shortly !</h2></center>
+        
             </div>
 
           </div>
@@ -198,11 +143,40 @@
 
 
 
+  <br>
+<br>
+
+<br>
+<br>
+
+
+
+
+  <br>
+<br>
+
+<br>
+<br>
+
+
+
+
+
+  <br>
+<br>
+
+<br>
+<br>
+
+
+
+
+
 <footer class="footer clearfix">
     <div class="container">
       <div class="row">
         <div class="col-xs-6 footer-para">
-          <p><center>&copy;Osmania's All right reserved</center></p>
+          <p>&copy;Osmania's All right reserved</p>
         </div>
         <div class="col-xs-6 text-right">
           <a href=""><i class="fa fa-facebook"></i></a>
@@ -222,7 +196,7 @@
   <script src="../static/js/smoothscroll.js"></script>
   <script src="../static/js/bootstrap.min.js"></script>
   <script src="../static/js/custom.js"></script>
-  <script type="text/javascript" src="../staticstatic/js/main.70a66962.js"></script>
+
 
 
   

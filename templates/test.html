@@ -1,21 +1,256 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <title>Heart Disease Predictor </title>
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/style1.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+
+  <!-- <link rel="stylesheet" href="../static/css/style.css">  -->
+  <script src="js/modernizr.js"></script>
 
 
-########### For dowloading or clone ################ 
+</head>
+<body>
 
-1.download the Git Bash tool
-2.Open the Tool in Preferred Path
-3.Type
-
-git clone https://github.com/anil-k-rajamoni18/Heart-Disease-Predictor-
-
-
-########## For Updating or Pushing ################
-
-1.git add .
-2.git status 
-3.git commit -m "changes updated"
-4.git push -u origin main
+  <!-- ====================================================
+  header section -->
 
 
 
+    <style>
+            .header {
 
+    text-align: center;
+    text-align-last: :center; 
+    background: white;
+    color:#34cffa;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 24;
+
+}
+
+  </style>
+
+
+
+<marquee behavior="scroll" direction="right">
+  
+    <div class="header">
+  <h4 style="font-size:2vw">Heart Disease Prediction</h4>
+
+</div>
+
+</marquee>
+
+
+
+  <header class="top-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-5 header-logo">
+          <br>
+          <a href="index.html"><img src="../static/img/logo1.png" alt="" class="img-responsive logo"></a>
+        </div>
+          
+
+
+        <div class="col-md-7">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid nav-bar">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                  
+
+                </button>
+              </div>
+
+  
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a class="menu active" href="#home" >Home</a></li>
+                  <li><a class="menu" href="{{url_for('dataset_info')}}">Dataset INFO</a></li>
+                  <li><a class="menu" href="{{url_for('preventions')}}">Preventions </a></li>
+                  <li><a class="menu" href="{{url_for('predictor')}}">Predictor</a></li>
+                  <li><a class="menu" href="{{url_for('contactus') }}"> Contact Us</a></li>
+                </ul>
+              </div><!-- /navbar-collapse -->
+            </div><!-- / .container-fluid -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header> <!-- end of header area -->
+
+
+
+
+
+<br>
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+               <form action="{{url_for('submit_form')}}" method="POST" class="reveal-content">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <div class="form-group">
+                        <input name="username" type="text" class="form-control" id="name" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
+                      </div>
+
+                      <div class="form-group">
+                <input type="text" class="form-control item" name="username" placeholder="Name">
+            </div>
+
+            
+            <div class="form-group">
+                <input type="text" class="form-control item" name="age" placeholder="Age">
+            </div>
+
+
+        
+        
+
+           <div class="form-control item">
+            <label for="exampleInputPassword1">Gender </label><br>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="Gender" id="inlineRadio1" value="1">
+          <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="Gender" id="inlineRadio2" value="0">
+          <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+
+
+        </div>
+
+
+
+
+            <div class="form-group">
+                <input type="text" class="form-control item" id="rbp"  name = "resting_blood_pressure" placeholder="Resting Blood Pressure eg. 120 , 145 ,102">
+            </div>
+
+               <div class="form-group">
+                <input type="text" class="form-control item" id="chol"  name ="cholestrol" placeholder="Cholesterol eg. 233 , 130 ,190">
+            </div>
+
+                <div class="form-group">
+                <input type="text" class="form-control item" id="heart_rate"  name ="max_heart_rate" placeholder="Max Heart Rate Achieved eg. 123 , 175 ,100">
+            </div>
+
+
+
+
+
+      <select id="select1" class=" form-control item" name="fasting_blood_sugar">
+            <option value="none" class="form-control item"> Fasting Blood Sugar > 120 mg/dl </option>
+          <option value="1" > True </option>
+            <option value="0"> False </option>
+        </select><br>
+
+         <select id="select1" class=" form-control item" name="rest_ecg_type">
+            <option value="none"> Rest ECG Type </option>
+          <option value="0" class="align-center"> Left Ventricular Hypertrophy </option>
+            <option value="1" class="align-center">Normal </option>
+
+             <option value="2" class="align-center"> ST-T wave abnormality</option>
+
+        </select><br>
+
+                      <div class="form-group">
+                        <textarea name="message"class="form-control" rows="3" style="width: 100%; max-width: 100%;" placeholder="Enter your message"></textarea>
+                      </div>
+
+
+                      <div>
+
+                      <button type="submit" class="btn btn-default btn-lg">Send</button>
+                    </div>
+
+
+                  </div>
+                </form>
+            </div>
+
+          </div>
+         
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<footer class="footer clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 footer-para">
+          <p><center>&copy;Osmania's All right reserved</center></p>
+        </div>
+        <div class="col-xs-6 text-right">
+          <a href=""><i class="fa fa-facebook"></i></a>
+          <a href=""><i class="fa fa-twitter"></i></a>
+          <a href=""><i class="fa fa-skype"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- script tags
+  ============================================================= -->
+  <script src="../static/js/jquery-2.1.1.js"></script>
+  <script src="../static/js/smoothscroll.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/custom.js"></script>
+  <script type="text/javascript" src="../staticstatic/js/main.70a66962.js"></script>
+
+
+  
+</body>
+</html>

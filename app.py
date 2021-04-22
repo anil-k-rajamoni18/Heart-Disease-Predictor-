@@ -3,6 +3,22 @@ import joblib
 import numpy as np
 
 
+
+import csv
+
+import smtplib 
+
+from email.message import EmailMessage
+
+from string import Template
+
+from pathlib import Path
+
+MY_ADDRESS,PASSWORD='hello.hell3096@gmail.com','Hello.hell#3096'
+
+
+
+
 # Load from file
 # Load the Random Forest CLassifier model
 filename = 'models/heart_diesease_RandomForest.sav'
@@ -23,20 +39,121 @@ def predictor():
 
 
 @app.route('/contactus')
-def predictor():
-    return render_template('contactus.html')
+def contactus():
+    return render_template('contact.html')
+
 
 
 
 
 @app.route('/preventions')
-def predictor():
+def preventions():
     return render_template('preventions.html')
 
 
 @app.route('/dataset_info')
-def predictor():
+def dataset_info():
     return render_template('dataset_info.html')
+
+
+
+@app.route('/submit_form', methods=['POST', 'GET'])
+def submit_form():
+  
+    if request.method=="POST" or request.method=="GET":
+        try:
+            data=request.form.to_dict()
+            # print(data)
+            send_mail_user(data)
+           
+            
+            
+            return render_template('/thankyou.html',name=data['username'])
+        except Exception as e:
+            # print(e)
+            return f"did not save to database {e}"
+    else:
+        return "something went wrong" 
+
+
+
+
+
+
+def write_to_file(data):
+    with open(r'database.txt',mode='a') as db:
+        email=data['email']
+        name=data['username']
+        dieseas = data["dieseas"]
+        accuracy = data["accuracy"]
+
+        file=db.write(f'\n {name} ,{email},{dieseas},{accuracy}')
+
+
+
+def write_to_csv(data):
+ 
+    with open(r'database2.csv',mode='a',newline='') as db2:
+        email=data['email']
+        name=data['username']
+        dieseas = data["dieseas"]
+        accuracy = data["accuracy"]
+        csv_writer = csv.writer(db2,delimiter=',', quotechar='"',quoting=csv.QUOTE_MINIMAL)
+        csv_writer.writerow([name,email,dieseas,accuracy])
+        print(csv_writer)
+
+
+def send_mail(data):
+   
+    email=EmailMessage()
+     
+    email['from'] = 'Heart Predictor WebApp'
+    email['to'] = data["email"]
+    email['subject'] = "Hey Your Results Are "
+    data["message"] = f' {data["dieseas"]} With   {data["accuracy"]} \n Please Visit our website for More Details'
+    msg=f" \t From Heat Predictor WebApp \n Name:{data['username']} \n EMAIL : {data['email']} \n SUBJECT : Heart Prediction Test Details \n MESSAGE : {data['message']}"
+
+
+    email.set_content(msg)
+
+
+    with smtplib.SMTP('smtp.gmail.com:587') as smtp:
+        smtp.ehlo()
+        smtp.starttls()
+        smtp.login(MY_ADDRESS,PASSWORD)
+        smtp.send_message(email)
+        print('all good boss')
+
+
+
+def send_mail_user(data):
+   
+    email=EmailMessage()
+     
+    email['from'] = 'Heart Predictor WebApp'
+    email['to'] = "rajamonianil0909@gmail.com"
+    email['subject'] = " Hey ! AK You Have New Response From Heart Predictor Web App "
+    msg=f" \t From Heat Predictor WebApp \n Name:{data['username']} \n EMAIL : {data['email']} \n SUBJECT : {data['subject']} \n MESSAGE : {data['message']}"
+
+
+    email.set_content(msg)
+
+
+    with smtplib.SMTP('smtp.gmail.com:587') as smtp:
+        smtp.ehlo()
+        smtp.starttls()
+        smtp.login(MY_ADDRESS,PASSWORD)
+        smtp.send_message(email)
+        print('all good boss')
+
+
+
+
+
+
+
+
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -44,6 +161,8 @@ def predict():
 
     if request.method =="POST":
         name = str(request.form["username"])
+
+        email =str(request.form["email"])
         age  = int(request.form["age"])
         sex = int(request.form["Gender"])
         resting_blood_pressure = int(request.form["resting_blood_pressure"])
@@ -107,10 +226,21 @@ def predict():
         #predicting 
         pred=model.predict(temp_array)
         if pred ==1:
-            dieseas = "Sorry , You have Heart Dieseas"
+            dieseas = "Yes , Heart Dieseas"
         else:
-            dieseas ="You have No Dieseas."
-        return render_template('result.html', array1=temp_array,dieseas=dieseas)
+            dieseas ="No Dieseas."
+
+
+        data = request.form.to_dict()
+        data["dieseas"] = dieseas
+        data["accuracy"] = 87
+        write_to_csv(data)
+        send_mail(data)
+        write_to_file(data)
+        print(data)
+        return render_template('result.html', test_result=dieseas)
+    else:
+        return "Something went wrong"
 
 
 
