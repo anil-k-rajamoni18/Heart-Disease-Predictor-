@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <title>Heart Disease Predictor </title>
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/style1.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+
+
+
+
+  <!-- <link rel="stylesheet" href="../static/css/style.css">  -->
+  <script src="js/modernizr.js"></script>
+
+
+
+
+</head>
+<body>
+
+  <!-- ====================================================
+  header section -->
+
+    <style>
+            .header {
+
+    text-align: center;
+    text-align-last: :center; 
+    background: white;
+    color:#34cffa;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 24;
+
+}
+
+.results{
+  text-align:center;
+  text-align-last: center;
+  font-size: 24px
+}
+
+.result-p{
+
+  color:red;
+
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 42%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: red;
+   font-family: verdana, sans-serif;
+    font-size: 24px
+}
+
+
+.center {
+  display: block;
+  margin-left: 10px;
+  margin-right: auto;
+  width: 70%;
+  top:70%;
+  left:60%;
+}
+
+  </style>
+}
+
+
+
+<marquee behavior="scroll" direction="right">
+  
+    <div class="header">
+  <h4 style="font-size:2vw">Heart Disease Prediction</h4>
+
+</div>
+
+</marquee>
+
+
+
+  <header class="top-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-5 header-logo">
+          <br>
+          <a href="index.html"><img src="../static/img/logo1.png" alt="" class="img-responsive logo"></a>
+        </div>
+          
+
+
+        <div class="col-md-7">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid nav-bar">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                  
+
+                </button>
+              </div>
+
+  
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a class="menu active" href="#home" >Home</a></li>
+                  <li><a class="menu" href="{{url_for('dataset_info')}}">Dataset INFO</a></li>
+                  <li><a class="menu" href="{{url_for('preventions')}}">Preventions </a></li>
+                  <li><a class="menu" href="{{url_for('predictor')}}">Predictor</a></li>
+                  <li><a class="menu" href="{{url_for('contactus') }}"> Contact Us</a></li>
+                </ul>
+              </div><!-- /navbar-collapse -->
+            </div><!-- / .container-fluid -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header> <!-- end of header area -->
+
+
+
+
+
+<br>
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+
+<div class="centered">
+  
+  <label for="file"><h4>Model Accuracy: </h4></label>
+<progress id="file" value="89" max="100"></progress><h4>89 % </h4>
+
+</div>
+
+
+   <div class="col-md-6 text-center">
+      <h3> Result using Using <b style="color:black">Machine learning</b> Algorithm</h3>
+      <img src="../static/img/random_forest.png"/ class="margin" id="boxshadow" width="75%" height="70%">
+    </div>
+
+ <div class="col-md-4 " style="padding-top:10px">
+        <div class="panel panel-primary">
+          <div class="panel-heading"><h4>Heart Disease Prediction for given Inputs is</h4></div>
+          <div class="panel-body"><h4>Algorithm used : RandomForest Classifier</h4></div>
+          <div class="panel-footer panel-primary">Test Result:<h1> {{ test_result }} </h1>
+          </div>
+        </div>
+
+
+        
+
+
+
+
+  <!-- Result -->
+
+
+
+<!-- 
+      <div class="results">
+        <p class='centered'>The Prediction is  {{ dieseas}}</p>
+      </div>
+ -->
+
+
+
+
+
+
+<br>
+
+
+<br>
+
+<br>
+
+
+
+
+
+
+
+  <!-- script tags
+  ============================================================= -->
+  <script src="../static/js/jquery-2.1.1.js"></script>
+  <script src="../static/js/smoothscroll.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/custom.js"></script>
+  <script type="text/javascript" src="../staticstatic/js/main.70a66962.js"></script>
+
+
+  
+</body>
+</html>
